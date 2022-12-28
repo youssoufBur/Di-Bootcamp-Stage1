@@ -1,0 +1,150 @@
+Exercie 1
+1) Je crée un ensemble avec tous mes numéros favorits
+my_fav_numbers = {55214032,62354887,65487523,52133546}
+2) Ajoutons deux numéro favorits
+my_fav_numbers.add(65894712)
+my_fav_numbers.add(67894712)
+
+3) Les éléments d'un ensemble ne sont pas indexés, 
+donc on ne peut pas y supprimer une valeur précise.
+
+friend_fav_numbers = {78654121,57463215,66623545}
+print(friend_fav_numbers)
+our_fav_numbers = my_fav_numbers.copy()
+print("hoo\n",our_fav_numbers)
+for i in friend_fav_numbers:
+    our_fav_numbers.add(i)
+
+Exercice 2
+On ne peut pas ajouter quelque chose à un tuple car 
+les tuples ne possedent pas des méthodes permettant de le faire.
+
+
+
+Exercice 3
+basket = ["Banana", "Apples", "Oranges", "Blueberries"]
+1) Supprimons "Banana"
+basket.remove("Banana")
+2)
+#basket.remove("Myrtilles")
+3)
+basket.append("Kiwi")
+4)
+basket.insert(0,"Pommes")
+5)
+nombre = basket.count("Pommes")
+
+6)
+basket.clear()
+7)
+print(basket)
+
+
+
+Exercice 4
+1) Un float est un nombre réel
+2) La difféence entre un float et un entier est que le float a une partie entière et une partie décimal.
+tandis que l'entier n'a qu'une partie entière.
+3) On peut représenter un float par la representation binaire en virgule flotante.
+4) 
+liste = []
+a = 1.5
+while a <= 5:
+    liste.append(a)
+    a+=0.5
+print(liste)
+
+
+
+Exercice 5
+for i in range(1,21):
+    print(i)
+a=range(1,21)
+for i,j in enumerate(list(range(1,21))):
+    if i%2 == 0:
+        print(i,j)
+
+
+
+Exercice 6
+mon_nom ="SANA"
+while input("entrer votre nom:") != mon_nom:
+    continue
+
+
+
+Exercice 7
+# 1)
+donnee = input("Entrer les fruits que vous voulez et separez les par une espace:\n")
+fruits = donnee.split()
+# 2)
+print(fruits)
+# 3)
+fruit = input("Entrer le nom d'un fruit:")
+if fruit in fruits:
+    print("Vous avez choisi un fruit préferé.")
+else:
+    print("Vous avez choisi un nouveau fruit.")
+
+Exercice 8
+pizza = []
+a=""
+while a != "quitter" :
+    a=input("Entrer une graniture:")
+    if a!= "quitter":
+        pizza.append(a)
+        print("Cette graniture a été ajoutée.")
+    else:
+        break
+print(f"{pizza}\nPrix:{12.5*len(pizza)}")
+
+
+
+Exercice 9
+import math
+liste=[]
+a= int(input("Entrer le nombre de personnes de votre famille:\n"))
+for i in range(a):
+    age = int(input("Entrer votre âge:"))
+    if age < 3:
+        liste.append(0)
+    elif age > 12:
+        liste.append(15)
+    else:
+        liste.append(10)
+total = sum(liste)
+print("somme :",total)
+Adol = []
+a = int(input("Entrer le nombre d'adolescents:"))
+for i in range(a):
+    nom = input('Entrer votre nom:')
+    age = int(input("Entrer votre âge:"))
+    if age > 11:
+        Adol.append(nom)
+print(Adol)
+
+
+
+Exercice 10
+sandwich_orders = ["Tuna sandwich","Avocado sandwich","Egg sandwich","Sabih sandwich","Pastrami sandwich"]
+finished_sandwiches = []
+for i in sandwich_orders:
+    finished_sandwiches.append(i)
+    sandwich_orders.remove(i)
+
+
+
+Exercice 11
+sandwich_orders = ["Tuna sandwich","Avocado sandwich","Pastrami sandwich","Egg sandwich","Pastrami sandwich","Sabih sandwich","Pastrami sandwich"]
+finished_sandwiches = []
+for i in sandwich_orders:
+    finished_sandwiches.append(i)
+    sandwich_orders.remove(i)
+
+print(" Il n'y a pas de Pastrami sandwich")
+while i in sandwich_orders:
+    if i == "Pastrami sandwich":
+        sandwich_orders.remove(i)
+
+if not("Pastrami sandwich" in finished_sandwiches):
+    print("Aucun Pastrami sandwich")

@@ -1,0 +1,66 @@
+#Exercice 1
+print("Hello word\n"*4)
+
+#Exercice 2
+a = 99
+resultat = (a**3)*8
+#print(resultat)
+
+
+#Exercice 3
+5 < 3
+#False
+
+3 == 3
+#True
+
+3 == "3"
+#False
+
+"3" > 3
+#False
+
+"Hello" == "hello"
+#False
+
+
+#Exercice 4
+computer_brand = "HP 257-G7"
+print("J'ai l'ordinateur "+computer_brand)
+
+
+#Exercice 5
+name = "SANA"
+age = "26"
+shoe_size = "12"
+info = "Je suis "+name+", j'ai "+age+" ans et la pointure de ma chaussure est:"+shoe_size
+print(info)
+
+#Exercice 6
+var1 = int(input("Enter a:"))
+var2 = int(input("Enter b:"))
+if var1 > var2:
+    print("Hello word")
+
+#Exercice 7
+a = int(input("Entrer un nombre entier:"))
+if a%2:
+    print(a," est un nombre impair.")
+else:
+    print(a," est un nombre pair.")
+
+
+#Exercice 8
+myName = "SANA"
+yourName = input("Enter your name:")
+if myName == yourName.upper():
+    print("Wonferful! we have the same name!")
+else:
+    print("Hoooo! your name is not good. I'll give you the mine.")
+
+#Exercice 9
+taille = int(input("Entrer votre taille en pouces:\n"))*2.54
+if taille > 145:
+    print("Vous êtes assez grand pour rouler!")
+else:
+    print("Vous devez grandir un peu pour rouler")

@@ -1,0 +1,18 @@
+#Défi1
+number = int(input("Entrer un nombre:\n"))
+lenght = int(input("Entrer la taille:\n"))
+liste = [number * i for i in range(1,(lenght+1))]
+print(liste)
+
+#Défi2
+chaine = input("Entrer une chaine:\n")
+chaine2 =[]
+j =""
+for i in chaine:
+    if i != j:
+        chaine2.append(i) 
+        j=i
+chaine = ""
+for i in chaine2:
+    chaine+=i
+print(chaine)

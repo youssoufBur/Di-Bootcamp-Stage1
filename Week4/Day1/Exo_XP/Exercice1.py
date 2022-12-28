@@ -1,1 +1,0 @@
-print("Hello word\nHello word\nHello word\nHello word")
