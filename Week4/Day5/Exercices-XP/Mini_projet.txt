@@ -1,0 +1,76 @@
+def MiseJour(dat,ligne1,ligne2,ligne3):
+    ligne1 = f"*   {dat[1][1][1]} | {dat[1][2][1]} | {dat[1][3][1]}   *\n"
+    ligne2 = f"*   {dat[2][1][1]} | {dat[2][2][1]} | {dat[2][3][1]}   *\n"
+    ligne3 = f"*   {dat[3][1][1]} | {dat[3][2][1]} | {dat[3][3][1]}   *\n"
+    return [ligne1, ligne2, ligne3]
+
+def display_board(dat,barre1,barre2,linge1,ligne2,ligne3):
+    print("TIC TAC TOE")
+    a = MiseJour(dat,linge1,ligne2,ligne3)
+    print(f"{barre1}{a[0]}{barre2}{a[1]}{barre2}{a[2]}{barre1}")
+
+def check_win(dat):
+    for i in range(1, 4):
+        if ((dat[i][1][1] == dat[i][2][1]) and (dat[i][2][1] == dat[i][3][1])) and dat[i][2][1] != " ":
+            return [1, dat[i][1][1]]
+    for j in range(1, 4):
+        if (dat[1][j][1] == dat[2][j][1] and dat[1][j][1] == dat[3][j][1]) and dat[3][j][1] != " ":
+            return [1, dat[1][j][1]]
+    if (dat[1][1][1] == dat[2][2][1] and dat[3][3][1] == dat[1][1][1]) and dat[2][2][1] != " ":
+        return [1, dat[2][2][1]]
+    elif (dat[1][3][1] == dat[2][2][1] and dat[3][1][1] == dat[2][2][1]) and dat[2][2][1] != " ":
+        return [1, dat[2][2][1]]
+    else:
+        return 0
+
+
+def player_input(dat):
+    c = 0
+    b = 0
+    while not (c in [1, 2, 3]) or not (b in [1, 2, 3, ]):
+        b = int(input("Enter row:"))
+        c = int(input("Enter column:"))
+        if not (c in [1, 2, 3]) or not (b in [1, 2, 3]):
+            print("Le numéro de ligne ou de colonne est compris enttre 1 et 3:")
+        else:
+            if dat[b][c][0] == "empty":
+                dat[b][c][0] = "busy"
+                return [b, c]
+            else:
+                print("This cell is busy!")
+                b = 10
+                c = 10
+
+def play(dat,barre1,barre2,linge1,ligne2,ligne3):
+    print("Welcome to TIC TOC TOE\n")
+    for i in range(9):
+        display_board(dat,barre1,barre2,linge1,ligne2,ligne3)
+           
+        if i%2==0:
+            print("Player x")
+        else:
+            print("Player o")
+        n = player_input(dat)
+        if i % 2 == 0:
+            dat[n[0]][n[1]][1] = "x"
+        else:
+            dat[n[0]][n[1]][1] = "o"
+        d = check_win(dat)
+        if d != 0:
+            print(f"  ***Bravo***!\nThe player {d[1] } have wont!")
+            display_board(dat,barre1,barre2,linge1,ligne2,ligne3)
+            break
+    print("End of the game!")
+
+import os
+import function as f
+dat = {1: {1: ["empty", " "], 2: ["empty", " "], 3: ["empty", " "]},
+       2: {1: ["empty", " "], 2: ["empty", " "], 3: ["empty", " "]},
+       3: {1: ["empty", " "], 2: ["empty", " "], 3: ["empty", " "]}}
+b = "*"*17
+barre1 = f"{b}\n"
+barre2 = "*  ---|---|---  *\n"
+ligne1 = ""
+ligne2 = ""
+ligne3 = ""
+f.play(dat,barre1,barre2,ligne1,ligne2,ligne3)

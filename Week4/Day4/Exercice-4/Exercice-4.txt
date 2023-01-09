@@ -1,0 +1,76 @@
+#Exercice-1
+def clement():
+    print("I'am learning a python here.\n")
+clement()
+
+
+#Exercice-2
+def favorite_book(title):
+    print(f"One of my favorite book is: {title}")
+favorite_book("Rugd-benga")
+
+#Exercice-3
+def describe_city(city,contry="Ghana"):
+    print(f"{city} est dans {contry}.")
+describe_city("Bobo")
+
+#Exercice-4
+a = int(input("Entrer un nombre entre 1 et 100:\n"))
+import random as rand
+b = rand.randint(1,100)
+if b==a:
+    print("SUCCES!")
+else:
+    print("Echec.\n")
+print(f"Voici les nombres:{a} et {b}")
+
+
+#Exercice-5
+def make_shirt(taille = "Grand",texte = "J'aime python"):
+    print(f"La taille de ce habit est {taille} et {texte}")
+make_shirt("XL","C'est un très joli habit.")
+make_shirt()
+make_shirt("moyenne")
+make_shirt("Petit","C'est pas simple.")
+
+
+#Exercice 6
+magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
+def show_magicians(liste = magician_names):
+    for i in magician_names:
+        print(i)
+show_magicians()
+def make_great(liste = magician_names):
+    for i in range(len(magician_names)):
+        magician_names[i] = magician_names[i] + " the Great"
+make_great()
+show_magicians()
+
+
+#Exrecice-7
+def get_random_temp():
+    import random as rand
+    tmp = rand.randint(-10,40)
+    saison = ""
+    if tmp in range(-10,3):
+        saison="hiver"
+    elif tmp in range(4,11):
+        saison = "automne"
+    elif tmp in range(12,40):
+        saison = "printemps"
+    else:
+        saison = "été"
+    return [tmp,saison]
+print(get_random_temp())
+def main(tmp=get_random_temp()):
+    if tmp[0] <= 0:
+        print(f"Il fait {tmp[0]} degrés Celsius.\nBrrr, c'est glacial ! Portez des couches supplémentaires aujourd'hui.Nous sommes en {tmp[1]}.")
+    elif tmp[0] in range(1,17):
+        print(f"Il fait {tmp[0]} degrés Celsius.\nAssez froid ! N'oubliez pas votre manteau.Nous sommes en {tmp[1]}.")
+    elif tmp[0] in range(17,23):
+         print(f"Il fait {tmp[0]} degrés Celsius.\nIl fait un peu froid.Nous sommes en {tmp[1]}.")
+    elif tmp[0] in range(24,32):
+         print(f"Il fait {tmp[0]} degrés Celsius.\nLe temps est beauNous sommes en {tmp[1]}.")
+    else:
+         print(f"Il fait {tmp[0]} degrés Celsius.\nIl fait chaut.Nous sommes en {tmp[1]}.")
+main()

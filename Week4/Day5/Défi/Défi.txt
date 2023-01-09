@@ -1,0 +1,10 @@
+word = input("Write here!")
+do = sorted(word.split(","))
+wordd =""
+print(str(do))
+for i in range(len(do)):
+    if i != (len(do)-1):
+        wordd+=do[i]+","
+    else:
+        wordd+=do[i]
+print(wordd)

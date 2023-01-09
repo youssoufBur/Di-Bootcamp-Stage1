@@ -1,0 +1,60 @@
+#Exercice-1
+keys = ['Ten', 'Twenty', 'Thirty']
+values = [10, 20, 30]
+dictionaire = {i:j for i,j in zip(keys,values)}
+print(dictionaire)
+
+#Exercice-2
+family = {"rick": 43, 'beth': 13, 'morty': 5, 'summer': 8}
+price = {}
+for i in family:
+    if family[i] < 3:
+        price[i] = "0 $"
+    elif family[i] > 12:
+        price[i] = "15 $"
+    else:
+        price[i] = "10 $"
+print(price)
+familyfamily = {}
+n = int(input("Entrer le nombre de personnes de la famille:"))
+for i in range(n):
+    nom = input("Entrer le nom:\n")
+    age = int(input("Entrer l'âge:\n"))
+    if age < 3:
+        familyfamily[nom] = "0 $"
+    elif age > 12:
+        familyfamily[nom] = "15 $"
+    else:
+        familyfamily[nom] = "10 $"
+print(familyfamily)
+
+
+#Exercice-3
+Dic = {"name":"Zara","creation_date":1975,"creator_name":["Amancio","Ortega","Gaona"],"type_of_clothes":["men", "women", "children", "home"],"international_competitors":["Gap"," H&M", "Benetton"],"number_stores":700,"major_color":{"France": "blue", "Spain" : "red", "US": ["pink", "green"]}}
+Dic.update({"number_stores":2})
+print("Les clients de Zaras sont:",Dic['type_of_clothes'][0],',',Dic['type_of_clothes'][1],',',Dic['type_of_clothes'][2])
+Dic.update({"nouveau":"Valeur"})
+if "nouveau" in Dic:
+    Dic.update({"magasin":"Desigual"})
+print(Dic)
+Dic.pop("creation_date")
+print([i for i in Dic])
+print(Dic)
+d = {"creation_date": 1975 ,"number_stores": 10000}
+Dic.update({"Last":d})
+
+
+#Exercice-4
+
+users = ["Mickey","Minnie","Donald","Ariel","Pluto"]
+disney_users_A = {i:j for i,j in zip(users,[x for x in range(5)])}
+print(disney_users_A)
+disney_users_B = {i:j for i,j in zip([x for x in range(5)],users)}
+print(disney_users_B)
+users.sort()
+disney_users_C = {i:j for i,j in zip(users,[x for x in range(5)])}
+print(disney_users_C)
+disney_users_D = {i:j for i,j in zip(users,[x for x in range(5)]) if "i" in i}
+print(disney_users_D)
+disney_users_E = {i:j for i,j in zip(users,[x for x in range(5)]) if i[0]== "M" or i[0] == "P"}
+print(disney_users_E)

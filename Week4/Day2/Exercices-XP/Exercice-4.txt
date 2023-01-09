@@ -1,0 +1,11 @@
+Exercice 4
+1) Un float est un nombre réel
+2) La difféence entre un float et un entier est que le float a une partie entière et une partie décimal.
+tandis que l'entier n'a qu'une partie entière.
+3) On peut représenter un float par la representation binaire en virgule flotante.
+#4) 
+liste = []
+a = 1.5
+while a <= 5:
+    liste.append(a)
+    a+=0.5

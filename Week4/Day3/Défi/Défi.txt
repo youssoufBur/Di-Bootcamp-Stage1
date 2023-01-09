@@ -1,0 +1,30 @@
+Exercice 1
+mot = input("Entrer un mot:\n")
+a=list(mot)     
+d = {}
+for i in mot:
+    d.update({i:[-1]})
+for i in d:
+    for j in range(len(a)):
+        if a[j]==i:
+            d[i].append(j)
+for i in d:
+    d[i].remove(-1)
+print(d)
+
+
+Exercice 2
+items_purchase = {
+  "Water": "1",
+  "Bread": "3",
+  "TV": "1000",
+  "Fertilizer": "20"
+}
+print(items_purchase)
+wallet = 300
+prod =[]
+for i in items_purchase:
+    if int(items_purchase[i]) < wallet:
+        prod.append(i)
+prod=(sorted(prod))
+print(prod)
